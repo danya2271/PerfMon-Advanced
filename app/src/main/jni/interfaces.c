@@ -41,10 +41,13 @@ JNIEXPORT jint JNICALL Java_xzr_perfmon_JniTools_getMinCpuBw
         (JNIEnv *env, jclass jclass1) {
     int freq;
 
-    if (read_file_int("/sys/class/devfreq/soc:qcom,mincpubw/cur_freq", &freq))
-        return UNSUPPORTED;
+    if (!read_file_int("/sys/class/devfreq/soc:qcom,mincpubw/cur_freq", &freq))
+        return freq;
 
-    return freq;
+    if (!read_file_int("/sys/devices/system/cpu/bus_dcvs/DDR/cur_freq", &freq))
+        return freq;
+
+    return UNSUPPORTED;
 }
 
 JNIEXPORT jint JNICALL Java_xzr_perfmon_JniTools_getCpuBw
@@ -55,6 +58,9 @@ JNIEXPORT jint JNICALL Java_xzr_perfmon_JniTools_getCpuBw
         return freq;
 
     if (!read_file_int("/sys/class/devfreq/soc:qcom,cpu-cpu-llcc-bw/cur_freq", &freq))
+        return freq;
+
+    if (!read_file_int("/sys/devices/system/cpu/bus_dcvs/L3/cur_freq", &freq))
         return freq;
 
     return UNSUPPORTED;
@@ -160,6 +166,9 @@ JNIEXPORT jint JNICALL Java_xzr_perfmon_JniTools_getLlccBw
         return freq;
 
     if (!read_file_int("/sys/class/devfreq/soc:qcom,llccbw/cur_freq", &freq))
+        return freq;
+
+    if (!read_file_int("/sys/devices/system/cpu/bus_dcvs/LLCC/cur_freq", &freq))
         return freq;
 
     return UNSUPPORTED;
