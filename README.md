@@ -7,6 +7,7 @@ A simple performance monitor for Android.
 * gpuload monitoring
 * cpubw freq monitoring
 * mincpubw monitoring
+* l3bw monitoring
 * m4m cache freq monitoring
 * system cache (llc) freq monitoring
 * memory usage monitoring

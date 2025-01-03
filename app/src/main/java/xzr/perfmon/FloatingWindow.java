@@ -33,6 +33,7 @@ import static xzr.perfmon.RefreshingDateThread.m4m;
 import static xzr.perfmon.RefreshingDateThread.maxtemp;
 import static xzr.perfmon.RefreshingDateThread.memusage;
 import static xzr.perfmon.RefreshingDateThread.mincpubw;
+import static xzr.perfmon.RefreshingDateThread.l3bw;
 
 public class FloatingWindow extends Service {
     static String TAG = "FloatingWindow";
@@ -52,6 +53,7 @@ public class FloatingWindow extends Service {
     static boolean showGpuloadNow;
     static boolean showCpubwNow;
     static boolean showMincpubwNow;
+    static boolean showL3bwNow;
     static boolean showM4MNow;
     static boolean showThermalNow;
     static boolean showMemNow;
@@ -76,6 +78,10 @@ public class FloatingWindow extends Service {
 
             showCpubwNow = SharedPreferencesUtil.sharedPreferences.getBoolean(SharedPreferencesUtil.SHOW_CPUBW, SharedPreferencesUtil.SHOW_CPUBW_DEFAULT);
             if (!showCpubwNow && Support.support_cpubw)
+                linen--;
+
+            showL3bwNow = SharedPreferencesUtil.sharedPreferences.getBoolean(SharedPreferencesUtil.SHOW_L3BW, SharedPreferencesUtil.SHOW_L3BW_DEFAULT);
+            if (!showL3bwNow && Support.support_l3bw)
                 linen--;
 
             showMincpubwNow = SharedPreferencesUtil.sharedPreferences.getBoolean(SharedPreferencesUtil.SHOW_MINCPUBW, SharedPreferencesUtil.SHOW_MINCPUBW_DEFAULT);
@@ -213,6 +219,10 @@ public class FloatingWindow extends Service {
                     line[i].setText("gpu0 " + adrenofreq + " Mhz" + Tools.formatIfyAddBlank(adrenofreq + "") + adrenoload + "%");
                 else
                     line[i].setText("gpu0 " + adrenofreq + " Mhz" + Tools.formatIfyAddBlank(adrenofreq + ""));
+                i++;
+            }
+            if (Support.support_l3bw && showL3bwNow) {
+                line[i].setText("l3bw " + l3bw);
                 i++;
             }
             if (Support.support_mincpubw && showMincpubwNow) {

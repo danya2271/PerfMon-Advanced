@@ -11,6 +11,8 @@ public class JniTools {
 
     public static native int getAdrenoLoad();
 
+    public static native int getL3bw();
+
     public static native int getMinCpuBw();
 
     public static native int getCpuBw();

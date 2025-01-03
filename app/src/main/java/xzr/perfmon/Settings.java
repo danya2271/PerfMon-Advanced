@@ -269,6 +269,23 @@ class Settings {
             {
                 final Switch sw = new Switch(context);
                 linearLayout.addView(sw);
+                sw.setText(R.string.show_l3bw);
+                if (SharedPreferencesUtil.sharedPreferences.getBoolean(SharedPreferencesUtil.SHOW_L3BW, SharedPreferencesUtil.SHOW_L3BW_DEFAULT))
+                    sw.setChecked(true);
+                sw.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (sw.isChecked()) {
+                            SharedPreferencesUtil.sharedPreferences.edit().putBoolean(SharedPreferencesUtil.SHOW_L3BW, true).commit();
+                        } else {
+                            SharedPreferencesUtil.sharedPreferences.edit().putBoolean(SharedPreferencesUtil.SHOW_L3BW, false).commit();
+                        }
+                    }
+                });
+            }
+            {
+                final Switch sw = new Switch(context);
+                linearLayout.addView(sw);
                 sw.setText(R.string.show_mincpubw);
                 if (SharedPreferencesUtil.sharedPreferences.getBoolean(SharedPreferencesUtil.SHOW_MINCPUBW, SharedPreferencesUtil.SHOW_MINCPUBW_DEFAULT))
                     sw.setChecked(true);

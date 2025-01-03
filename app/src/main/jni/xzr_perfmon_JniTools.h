@@ -33,6 +33,14 @@ JNIEXPORT jint JNICALL Java_xzr_perfmon_JniTools_getAdrenoLoad
 
 /*
  * Class:     xzr_perfmon_JniTools
+ * Method:    getL3bw
+ * Signature: ()I
+ */
+JNIEXPORT jint JNICALL Java_xzr_perfmon_JniTools_getL3bw
+        (JNIEnv *, jclass);
+
+/*
+ * Class:     xzr_perfmon_JniTools
  * Method:    getmincpubw
  * Signature: ()I
  */

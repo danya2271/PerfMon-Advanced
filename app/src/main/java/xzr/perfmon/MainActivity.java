@@ -74,6 +74,11 @@ public class MainActivity extends Activity {
         }
         {
             TextView textView = new TextView(this);
+            textView.setText(getResources().getString(R.string.support_l3bw_mo) + Tools.bool2Text(Support.support_l3bw, this));
+            main.addView(textView);
+        }
+        {
+            TextView textView = new TextView(this);
             textView.setText(getResources().getString(R.string.support_cpubw_mo) + Tools.bool2Text(Support.support_cpubw, this));
             main.addView(textView);
         }

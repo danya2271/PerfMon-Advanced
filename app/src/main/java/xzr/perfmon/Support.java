@@ -5,6 +5,7 @@ class Support {
     static boolean support_cpuload;
     static boolean support_adrenofreq;
     static boolean support_mincpubw;
+    static boolean support_l3bw;
     static boolean support_cpubw;
     static boolean support_m4m;
     static boolean support_temp;
@@ -30,6 +31,11 @@ class Support {
             linen++;
             support_adrenofreq = true;
         } else support_adrenofreq = false;
+
+        if (JniTools.getL3bw() != UNSUPPORTED) {
+            linen++;
+            support_l3bw = true;
+        } else support_l3bw = false;
 
         if (JniTools.getMinCpuBw() != UNSUPPORTED) {
             linen++;

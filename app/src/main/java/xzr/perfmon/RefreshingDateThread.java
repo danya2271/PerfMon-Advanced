@@ -7,6 +7,7 @@ public class RefreshingDateThread extends Thread {
     static int[] cpuonline;
     static int adrenoload;
     static int adrenofreq;
+    static int l3bw;
     static int mincpubw;
     static int cpubw;
     static int m4m;
@@ -36,6 +37,8 @@ public class RefreshingDateThread extends Thread {
                 adrenofreq = JniTools.getAdrenoFreq();
             if (FloatingWindow.showGpuloadNow && Support.support_adrenofreq)
                 adrenoload = JniTools.getAdrenoLoad();
+            if (FloatingWindow.showL3bwNow && Support.support_l3bw)
+                l3bw = JniTools.getL3bw();
             if (FloatingWindow.showMincpubwNow && Support.support_mincpubw)
                 mincpubw = JniTools.getMinCpuBw();
             if (FloatingWindow.showCpubwNow && Support.support_cpubw)

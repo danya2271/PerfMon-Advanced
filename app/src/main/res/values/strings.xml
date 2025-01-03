@@ -5,6 +5,7 @@
     <string name="support_cpuload_mo">"Support cpuload monitoring: "</string>
     <string name="support_gpufreq_mo">"Support gpufreq monitoring: "</string>
     <string name="support_gpuload_mo">"Support gpuload monitoring: "</string>
+    <string name="support_l3bw_mo">"Support l3bw monitoring: "</string>
     <string name="support_cpubw_mo">"Support cpubw monitoring: "</string>
     <string name="support_m4mfreq_mo">"Support m4mfreq monitoring: "</string>
     <string name="support_thermal_mo">"Support thermal monitoring: "</string>
@@ -41,6 +42,7 @@
     <string name="show_mem">Show RAM usage</string>
     <string name="show_current">Show current</string>
     <string name="show_thermal">Show temp</string>
+    <string name="show_l3bw">Show l3bw</string>
     <string name="show_mincpubw">Show mincpubw</string>
     <string name="show_gpubw">Show gpubw</string>
     <string name="support_gpubw_mo">"Support gpubw monitoring: "</string>

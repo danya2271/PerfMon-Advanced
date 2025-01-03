@@ -42,8 +42,11 @@ public class SharedPreferencesUtil {
     static final String SHOW_MINCPUBW = "show_mincpubw";
     static final boolean SHOW_MINCPUBW_DEFAULT = false;
 
+    static final String SHOW_L3BW = "show_l3bw";
+    static final boolean SHOW_L3BW_DEFAULT = true;
+
     static final String SHOW_M4M = "show_m4m";
-    static final boolean SHOW_M4M_DEFAULT = true;
+    static final boolean SHOW_M4M_DEFAULT = false;
 
     static final String SHOW_THERMAL = "show_thermal";
     static final boolean SHOW_THERMAL_DEFAULT = true;
